@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Slotmachine JS</title>
+    <style>
+      .slotmacine-container {
+        text-align: center;
+      }
+      .slotmacine-container .slot-window {
+        height: 384px; /* image hieht * image count : 128 * 3 */
+        overflow-y: hidden;
+      }
+      .wheel {
+        display: inline-block;
+        position: relative;
+        width: 128px;
+        height: 100%;
+      }
+      .slot-container {
+        position: relative;
+        top: 0%;
+      }
+      .slot-item img {
+        vertical-align: bottom;
+      }
+    </style>
+    <script src="js/TweenLite.min.js"></script>
+    <script src="js/CSSPlugin.min.js"></script>
+    <script>
+      function roll_wheel() {
+        var slotContainers = document.getElementsByClassName("slot-container");
+        for(i=0;i<slotContainers.length;i++) {
+          var slotContainer = slotContainers[i];
+          TweenLite.to(slotContainer, 2, { top: '-300%' });
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="button" value="roll" onclick="roll_wheel()" />
+    </div>
+    <div class="slotmacine-container">
+      <div class="slot-window">
+        <div class="wheel">
+          <div class="slot-container">
+            <div class="slot-item"><img src="img/0.png" /></div>
+            <div class="slot-item"><img src="img/1.png" /></div>
+            <div class="slot-item"><img src="img/2.png" /></div>
+            <div class="slot-item"><img src="img/3.png" /></div>
+            <div class="slot-item"><img src="img/4.png" /></div>
+            <div class="slot-item"><img src="img/5.png" /></div>
+            <div class="slot-item"><img src="img/6.png" /></div>
+            <div class="slot-item"><img src="img/7.png" /></div>
+            <div class="slot-item"><img src="img/8.png" /></div>
+            <div class="slot-item"><img src="img/9.png" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
